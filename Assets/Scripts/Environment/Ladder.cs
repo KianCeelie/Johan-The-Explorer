@@ -6,7 +6,7 @@ public class Ladder : MonoBehaviour
 
 {
 
-    public float speed = 6;
+    public float speed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,9 @@ public class Ladder : MonoBehaviour
         } else if (other.tag == "Player" && Input.GetKey(KeyCode.S))
         {
             other.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, -speed);
+        } else
+        {
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
     }
 }
