@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
 
     public float runSpeed = 40f;
-
     float horizontalMove = 0f;
+    public float distance;
+    public LayerMask whatIsLadder;
+    private bool isClimbing;
 
     bool jump = false;
     bool crouch = false;
