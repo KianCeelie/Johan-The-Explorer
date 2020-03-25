@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - health
+  - coin
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,11 @@ TagManager:
   - 
   - Ladder
   - player
+<<<<<<< HEAD
   - Ground
+=======
+  - Enemies
+>>>>>>> ad52f85fa050bbe5cac3e1abde9fec1ec5457260
   - 
   - 
   - 
