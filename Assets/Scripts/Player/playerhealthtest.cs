@@ -12,7 +12,7 @@ public class playerhealthtest : MonoBehaviour
         if(collision.tag == "health")
         {
             Destroy(collision.gameObject);
-            health = 125f;
+            health *= 125;
         }
         
     }
