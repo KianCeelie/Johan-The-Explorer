@@ -6,6 +6,7 @@ TagManager:
   tags:
   - health
   - coin
+  - jump
   layers:
   - Default
   - TransparentFX
@@ -15,13 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - Ladder
-  - player
-<<<<<<< HEAD
-  - Ground
-=======
-  - Enemies
->>>>>>> ad52f85fa050bbe5cac3e1abde9fec1ec5457260
+  - ground
+  - 
+  - 
   - 
   - 
   - 
