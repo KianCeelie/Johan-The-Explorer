@@ -30,5 +30,19 @@ public class playerHealth : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "health")
+        {
+            maxHealth = 125;
+            currentHealth = 125;
+            Destroy(collision.gameObject);
+        }
+
     }
 }
