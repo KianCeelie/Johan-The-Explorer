@@ -7,6 +7,7 @@ TagManager:
   - health
   - coin
   - jump
+  - Ladder
   layers:
   - Default
   - TransparentFX

@@ -46,11 +46,7 @@ public class doubleJump : MonoBehaviour
         }
         else
         {
-<<<<<<< HEAD:Assets/test/doubleJump.cs
-            if (Input.GetKeyDown(KeyCode.UpArrow)  && isGrounded) 
-=======
             if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
->>>>>>> bd7ee55155a3ba453864bc42567535b4cdcb614b:Assets/Scripts/Player/doubleJump.cs
             {
                 rb.velocity = Vector2.up * jumpForce;
                 extraJumps--;
