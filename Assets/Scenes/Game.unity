@@ -406,7 +406,7 @@ RectTransform:
   m_GameObject: {fileID: 382869493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 652700115}
   - {fileID: 667865992}
@@ -416,7 +416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -25}
+  m_AnchoredPosition: {x: 71.7, y: -25}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382869495
@@ -577,7 +577,6 @@ GameObject:
   m_Component:
   - component: {fileID: 393071638}
   - component: {fileID: 393071637}
-  - component: {fileID: 393071642}
   - component: {fileID: 393071641}
   - component: {fileID: 393071640}
   - component: {fileID: 393071639}
@@ -585,6 +584,7 @@ GameObject:
   - component: {fileID: 393071646}
   - component: {fileID: 393071645}
   - component: {fileID: 393071644}
+  - component: {fileID: 393071642}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -650,8 +650,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393071636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.46, y: -6.23, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: -14.46, y: -6.2272, z: 0}
+  m_LocalScale: {x: 5, y: 4.9821153, z: 1}
   m_Children:
   - {fileID: 1484744300}
   - {fileID: 797960353}
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7a220a0f574245b0487724692e558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 600
+  m_JumpForce: 500
   m_CrouchSpeed: 0.3
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -731,10 +731,32 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 393071639}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &393071642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,10 +771,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 393071641}
   runSpeed: 40
-  distance: 0
+  distance: 10
   whatIsLadder:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!58 &393071643
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -766,9 +788,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0029349804, y: -0.0862386}
+  m_Offset: {x: 0.0029349804, y: -0.081619926}
   serializedVersion: 2
-  m_Radius: 0.08358779
+  m_Radius: 0.07898563
 --- !u!114 &393071644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   healthBar: {fileID: 382869495}
 --- !u!95 &393071645
 Animator:
@@ -957,7 +979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457167787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.74, y: -6.44, z: 0}
+  m_LocalPosition: {x: -1.74, y: -5.94, z: 0}
   m_LocalScale: {x: 10, y: 9.96, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1240,7 +1262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.46, y: -5.73, z: -10}
+  m_LocalPosition: {x: -14.46, y: -5.7272, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1397832086}
@@ -2078,12 +2100,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_Font: {fileID: 12800000, guid: 1e5ebb6dce4ddf34592e07229f12adde, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 150
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2115,7 +2137,7 @@ GameObject:
   - component: {fileID: 1030992668}
   m_Layer: 8
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2265,7 +2287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137189411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -253.9, y: 176, z: 0}
+  m_LocalPosition: {x: -256.8, y: 140.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1018817127}
@@ -2765,6 +2787,7 @@ GameObject:
   - component: {fileID: 1705973599}
   - component: {fileID: 1705973598}
   - component: {fileID: 1705973596}
+  - component: {fileID: 1705973597}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2798,6 +2821,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1705973597
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705973595}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!23 &1705973598
 MeshRenderer:
   m_ObjectHideFlags: 0

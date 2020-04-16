@@ -11,7 +11,7 @@ public class doubleJump : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
     public int extraJumpValue;
-   
+
     private float moveInput;
     private Rigidbody2D rb;
     private bool facingRight = true;
@@ -46,7 +46,7 @@ public class doubleJump : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
             {
                 rb.velocity = Vector2.up * jumpForce;
                 extraJumps--;
@@ -67,27 +67,8 @@ public class doubleJump : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-
-
-        moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        if (facingRight == false && moveInput > 0)
-        {
-            Flip();
-        }
-        else if (facingRight == true && moveInput < 0)
-        {
-            Flip();
-        }
     }
 
 
-    void Flip()
-        {
-            facingRight = !facingRight;
-            Vector3 Scaler = transform.localScale;
-            Scaler.x *= -1;
-            transform.localScale = Scaler;
-        }
-    }
-
+    
+}

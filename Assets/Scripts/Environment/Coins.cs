@@ -3,22 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerData : MonoBehaviour
+public class Coins : MonoBehaviour
 {
-    public float health = 100f;
-
     public Text coinTxt;
     public float coins;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "health")
-        {
-            health = 125f;
-            Destroy(collision.gameObject);
-        }
-
-        else if (collision.tag == "coin")
+       if (collision.tag == "coin")
         {
             coins += 1f;
             coinTxt.text = coins.ToString();
