@@ -12,13 +12,7 @@ public class playerData : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "health")
-        {
-            health = 125f;
-            Destroy(collision.gameObject);
-        }
-
-        else if (collision.tag == "coin")
+        if (collision.tag == "coin")
         {
             coins += 1f;
             coinTxt.text = coins.ToString();

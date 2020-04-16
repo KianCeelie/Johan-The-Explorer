@@ -46,7 +46,7 @@ public class doubleJump : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow)  && isGrounded) 
             {
                 rb.velocity = Vector2.up * jumpForce;
                 extraJumps--;

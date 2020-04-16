@@ -752,7 +752,7 @@ MonoBehaviour:
   distance: 0
   whatIsLadder:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
 --- !u!58 &393071643
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2113,7 +2113,7 @@ GameObject:
   - component: {fileID: 1030992664}
   - component: {fileID: 1030992663}
   - component: {fileID: 1030992668}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
