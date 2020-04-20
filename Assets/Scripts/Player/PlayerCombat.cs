@@ -20,8 +20,13 @@ public class PlayerCombat : MonoBehaviour
     public float attackRate = 1f;
     float nextAttackTime = 0f;
 
+    //gun
+    public Transform FirePoint;
+    public GameObject BulletPrefab;
+
     bool Sword = true;
     bool Whip = false;
+    bool gun = true;
 
     // Update is called once per frame
     void Update()
@@ -31,10 +36,19 @@ public class PlayerCombat : MonoBehaviour
         {
             Sword = true;
             Whip = false;
-        } else if (Input.GetKeyDown("2"))
+            gun = false;
+        }
+        else if (Input.GetKeyDown("2"))
         {
             Sword = false;
             Whip = true;
+            gun = false;
+        }
+        else if (Input.GetKeyDown("3"))
+        {
+            Sword = false;
+            Whip = false;
+            gun = true;
         }
 
         // Sword
@@ -56,6 +70,16 @@ public class PlayerCombat : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
+        // gun
+        if (Time.time >= nextAttackTime && gun == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Shoot();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+        }
+
     }
 
     // Weapons
@@ -90,6 +114,13 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamageWhip);
         }
+    }
+
+    //gun
+    void Shoot()
+    {
+        // shooting logic
+        Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
     }
 
     private void OnDrawGizmosSelected()

@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+    [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
     [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
@@ -20,7 +21,7 @@ public class CharacterController2D : MonoBehaviour
 
     [Header("Events")]
     [Space]
-    
+
     public UnityEvent OnLandEvent;
 
     [System.Serializable]
@@ -69,7 +70,7 @@ public class CharacterController2D : MonoBehaviour
             if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
             {
                 crouch = true;
-
+                Debug.Log("check");
             }
         }
 
@@ -124,7 +125,13 @@ public class CharacterController2D : MonoBehaviour
                 Flip();
             }
         }
-        
+        // If the player should jump...
+        //if (m_Grounded && jump)
+        //{
+            // Add a vertical force to the player.
+            //m_Grounded = false;
+            //m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+        //}
     }
 
 
