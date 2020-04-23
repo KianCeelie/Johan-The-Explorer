@@ -9,16 +9,14 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
+    public float attackRate = 1f;
+    float nextAttackTime = 0f;
+
     // Sword
     public float attackRangeSword = 0.5f;
-    public int attackDamageSword = 60;
 
     // Whip
     public float attackRangeWhip = 1f;
-    public int attackDamageWhip = 40;
-
-    public float attackRate = 1f;
-    float nextAttackTime = 0f;
 
     //gun
     public Transform FirePoint;
@@ -27,6 +25,8 @@ public class PlayerCombat : MonoBehaviour
     bool Sword = true;
     bool Whip = false;
     bool gun = true;
+
+    private int Damage;
 
     // Update is called once per frame
     void Update()
@@ -96,7 +96,7 @@ public class PlayerCombat : MonoBehaviour
         // damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamageSword);
+            enemy.GetComponent<Enemy>().TakeDamage(Damage = 50);
         }
     }
 
@@ -112,7 +112,7 @@ public class PlayerCombat : MonoBehaviour
         // damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamageWhip);
+            enemy.GetComponent<Enemy>().TakeDamage(Damage = 40);
         }
     }
 
