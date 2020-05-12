@@ -261,7 +261,6 @@ GameObject:
   - component: {fileID: 258489167}
   - component: {fileID: 258489166}
   - component: {fileID: 258489168}
-  - component: {fileID: 258489169}
   m_Layer: 0
   m_Name: Jump-PowerUp
   m_TagString: jump
@@ -293,7 +292,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.057121433, y: 0.062351413}
   m_EdgeRadius: 0
 --- !u!4 &258489167
 Transform:
@@ -359,27 +358,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &258489169
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258489165}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &364142914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1415,7 @@ GameObject:
   - component: {fileID: 541016714}
   - component: {fileID: 541016713}
   - component: {fileID: 541016712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2749,7 +2727,7 @@ GameObject:
   - component: {fileID: 1533810788}
   - component: {fileID: 1533810787}
   - component: {fileID: 1533810786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
