@@ -44,4 +44,10 @@ public class MenuControl : MonoBehaviour
     {
         Neusaap.gameObject.SetActive(false);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        SceneManager.LoadScene(3);
+    }
+
 }
