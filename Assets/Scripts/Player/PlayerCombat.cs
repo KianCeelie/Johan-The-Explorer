@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+
     public Animator animator;
 
     public Transform attackPoint;
@@ -26,7 +27,7 @@ public class PlayerCombat : MonoBehaviour
     bool Whip = false;
     bool gun = true;
 
-    private int Damage;
+    private int Damage = 100;
 
     // Update is called once per frame
     void Update()
@@ -120,6 +121,9 @@ public class PlayerCombat : MonoBehaviour
     void Shoot()
     {
         // shooting logic
+        BulletPrefab.GetComponent<Bullet>().Damage = Damage;
+
+        //Damage = BulletPrefab.GetComponent<Bullet>().Damage;
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
     }
 
@@ -142,4 +146,5 @@ public class PlayerCombat : MonoBehaviour
             Gizmos.DrawWireSphere(attackPoint.position, attackRangeWhip);
         }
     }
+    public int getDamage() { return Damage; }
 }

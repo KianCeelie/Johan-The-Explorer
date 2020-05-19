@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
+    public Animator animator;
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
@@ -39,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         if (dubbleJumpIsActive == true)
         {
             if (isGrounded == true)
@@ -46,19 +49,20 @@ public class PlayerMovement : MonoBehaviour
                 extraJumps = extraJumpValue;
             }
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) && extraJumps > 0)
+            if (Input.GetKeyDown(KeyCode.W) && extraJumps > 0)
             {
                 rb.velocity = Vector2.up * jumpForce;
+                animator.SetBool("IsJumping", true);
                 extraJumps--;
             }
-            else if (Input.GetKeyDown(KeyCode.UpArrow) && jumpForce == 0 && isGrounded == true)
+            else if (Input.GetKeyDown(KeyCode.W) && jumpForce == 0 && isGrounded == true)
             {
                 rb.velocity = Vector2.up * jumpForce;
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
 
             {
                 rb.velocity = Vector2.up * jumpForce;
@@ -85,6 +89,11 @@ public class PlayerMovement : MonoBehaviour
             dubbleJumpIsActive = true;
         }
 
+    }
+
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     private void FixedUpdate()
