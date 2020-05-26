@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: cb793d21251e3ab42a2415f18daf42e9
+guid: 51450277a11d4c843b6c844829f4ac20
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6660265528859476557
-    second: PlayerModel_Jump_0
+      213: 3110467860747563004
+    second: Player_Jump_Final_0
   - first:
-      213: -6177279391376993201
-    second: PlayerModel_Jump_1
+      213: 7540229864093210089
+    second: Player_Jump_Final_1
   - first:
-      213: -1549214638516209968
-    second: PlayerModel_Jump_2
+      213: 4893151603630933434
+    second: Player_Jump_Final_2
+  - first:
+      213: 7345873082406848448
+    second: Player_Jump_Final_3
+  - first:
+      213: 7215174752105605997
+    second: Player_Jump_Final_4
+  - first:
+      213: -1235423928681457461
+    second: Player_Jump_Final_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerModel_Jump_0
+      name: Player_Jump_Final_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bd3d820acbf193a0800000000000000
-      internalID: -6660265528859476557
+      spriteID: cffa0251a0a9a2b20800000000000000
+      internalID: 3110467860747563004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerModel_Jump_1
+      name: Player_Jump_Final_1
       rect:
         serializedVersion: 2
         x: 16
@@ -142,14 +151,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4412a64f15e54aa0800000000000000
-      internalID: -6177279391376993201
+      spriteID: 9e5511e8c1744a860800000000000000
+      internalID: 7540229864093210089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerModel_Jump_2
+      name: Player_Jump_Final_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab50e8e5577f7e340800000000000000
+      internalID: 4893151603630933434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Jump_Final_3
       rect:
         serializedVersion: 2
         x: 0
@@ -163,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d6f76e8e75108ae0800000000000000
-      internalID: -1549214638516209968
+      spriteID: 0c7c6f9f5a8c1f560800000000000000
+      internalID: 7345873082406848448
       vertices: []
       indices: 
       edges: []
