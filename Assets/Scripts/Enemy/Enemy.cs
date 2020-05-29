@@ -9,8 +9,6 @@ public class Enemy : MonoBehaviour
 
     public int Health = 100;
 
-    // Start is called before the first frame update
-
     public void TakeDamage(int damage)
     {
         Health -= damage;
@@ -18,7 +16,7 @@ public class Enemy : MonoBehaviour
         //play hurt animation
         animator.SetTrigger("Hurt");
 
-        if(Health <= 0)
+        if (Health <= 0)
         {
             Die();
         }
