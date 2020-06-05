@@ -27,7 +27,7 @@ public class PlayerCombat : MonoBehaviour
     bool Whip = false;
     bool gun = true;
 
-    private int Damage = 100;
+    private int damage;
 
     // Update is called once per frame
     void Update()
@@ -97,7 +97,7 @@ public class PlayerCombat : MonoBehaviour
         // damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(Damage = 50);
+            enemy.GetComponent<Enemy>().TakeDamage(50 + damage);
         }
     }
 
@@ -113,7 +113,7 @@ public class PlayerCombat : MonoBehaviour
         // damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(Damage = 40);
+            enemy.GetComponent<Enemy>().TakeDamage(40 + damage);
         }
     }
 
@@ -121,7 +121,7 @@ public class PlayerCombat : MonoBehaviour
     void Shoot()
     {
         // shooting logic
-        BulletPrefab.GetComponent<Bullet>().Damage = Damage;
+        BulletPrefab.GetComponent<Bullet>().Damage = damage;
 
         //Damage = BulletPrefab.GetComponent<Bullet>().Damage;
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
@@ -146,5 +146,5 @@ public class PlayerCombat : MonoBehaviour
             Gizmos.DrawWireSphere(attackPoint.position, attackRangeWhip);
         }
     }
-    public int getDamage() { return Damage; }
+    public int getDamage() { return damage; }
 }
