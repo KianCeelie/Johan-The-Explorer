@@ -9,9 +9,9 @@ public class MenuControl : MonoBehaviour
     public GameObject OptionsPanel;
     public GameObject Neusaap;
 
-    public void LoadScene(string level)
+    public void LoadScene(string Level_1)
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(Level_1);
     }
 
     public void LoadMenu()
@@ -43,11 +43,6 @@ public class MenuControl : MonoBehaviour
     public void CloseNeusaap()
     {
         Neusaap.gameObject.SetActive(false);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        SceneManager.LoadScene(3);
     }
 
 }
