@@ -35,18 +35,21 @@ public class PlayerCombat : MonoBehaviour
 
         if (Input.GetKeyDown("1"))
         {
+            SoundManagerScript.PlaySound("WeaponSwitching");
             Sword = true;
             Whip = false;
             gun = false;
         }
         else if (Input.GetKeyDown("2"))
         {
+            SoundManagerScript.PlaySound("WeaponSwitching");
             Sword = false;
             Whip = true;
             gun = false;
         }
         else if (Input.GetKeyDown("3"))
         {
+            SoundManagerScript.PlaySound("WeaponSwitching");
             Sword = false;
             Whip = false;
             gun = true;
@@ -57,8 +60,23 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                AttackSword();
+                // attack rate
                 nextAttackTime = Time.time + 1f / attackRate;
+
+                // Play an attack animation
+                animator.SetTrigger("Attack");
+
+                // Play Sound
+                SoundManagerScript.PlaySound("SwordAttack");
+
+                // Detect enemies in range of attacks
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeSword, enemyLayers);
+
+                // damage them
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    enemy.GetComponent<Enemy>().TakeDamage(60 + damage);
+                }
             }
         }
 
@@ -67,8 +85,23 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                AttackWhip();
+                // attack rate
                 nextAttackTime = Time.time + 1f / attackRate;
+
+                // Play an attack animation
+                animator.SetTrigger("Attack");
+
+                // Play Sound
+                SoundManagerScript.PlaySound("WhipAttack");
+
+                // Detect enemies in range of attacks
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeWhip, enemyLayers);
+
+                // damage them
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    enemy.GetComponent<Enemy>().TakeDamage(40 + damage);
+                }
             }
         }
         // gun
@@ -76,55 +109,20 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Shoot();
+                // attack rate
                 nextAttackTime = Time.time + 1f / attackRate;
+
+                // Play Sound
+                SoundManagerScript.PlaySound("GunAttack");
+
+                // shooting logic
+                BulletPrefab.GetComponent<Bullet>().Damage = damage;
+
+                //Damage = BulletPrefab.GetComponent<Bullet>().Damage;
+                Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
             }
         }
 
-    }
-
-    // Weapons
-
-    // Sword
-    void AttackSword()
-    {
-        // Play an attack animation
-        animator.SetTrigger("Attack");
-
-        // Detect enemies in range of attacks
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeSword, enemyLayers);
-
-        // damage them
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            enemy.GetComponent<Enemy>().TakeDamage(50 + damage);
-        }
-    }
-
-    //Whip
-    void AttackWhip()
-    {
-        // Play an attack animation
-        animator.SetTrigger("Attack");
-
-        // Detect enemies in range of attacks
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeWhip, enemyLayers);
-
-        // damage them
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            enemy.GetComponent<Enemy>().TakeDamage(40 + damage);
-        }
-    }
-
-    //gun
-    void Shoot()
-    {
-        // shooting logic
-        BulletPrefab.GetComponent<Bullet>().Damage = damage;
-
-        //Damage = BulletPrefab.GetComponent<Bullet>().Damage;
-        Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
     }
 
     private void OnDrawGizmosSelected()

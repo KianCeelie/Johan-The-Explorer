@@ -12,6 +12,7 @@ public class Coins : MonoBehaviour
     {
        if (collision.tag == "coin")
         {
+            SoundManagerScript.PlaySound("CoinPickup");
             coins += 1f;
             coinTxt.text = coins.ToString();
             Destroy(collision.gameObject);

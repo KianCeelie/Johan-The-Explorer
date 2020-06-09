@@ -5,7 +5,6 @@ using UnityEngine;
 public class Ladder : MonoBehaviour
 
 {
-
     public float speed = 1;
 
 
