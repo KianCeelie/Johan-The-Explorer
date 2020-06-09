@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ladder : MonoBehaviour
 
 {
-    public float speed = 1;
+    private float speed = 5;
 
 
     private void OnTriggerStay2D(Collider2D other)
@@ -20,7 +20,7 @@ public class Ladder : MonoBehaviour
         }
         else
         {
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         }
     }
 }
