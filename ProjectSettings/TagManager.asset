@@ -11,6 +11,7 @@ TagManager:
   - ground
   - Spikes
   - Enemy
+  - DamagePowerup
   layers:
   - Default
   - TransparentFX

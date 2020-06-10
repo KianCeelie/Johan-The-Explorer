@@ -44,11 +44,9 @@ public class playerHealth : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.tag == "health")
+        if (collision.tag == "DamagePowerup")
         {
-            maxHealth = 125;
-            currentHealth = 125;
-            Destroy(collision.gameObject);
+
         }
         // Enemies
 
