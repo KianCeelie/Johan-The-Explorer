@@ -1288,6 +1288,7 @@ MonoBehaviour:
   controller: {fileID: 622112802}
   animator: {fileID: 622112797}
   runSpeed: 35
+  distance: 0
 --- !u!114 &622112796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,7 +1750,7 @@ GameObject:
   - component: {fileID: 775272011}
   m_Layer: 8
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1877,7 +1878,7 @@ GameObject:
   - component: {fileID: 788080150}
   m_Layer: 8
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2386,7 +2387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1095932544}
-  Health: 100
+  maxHealth: 100
 --- !u!212 &1095932546
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2739,7 +2740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686a9ecfcb53b144c852881066be7577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!61 &1353202009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2849,7 +2849,7 @@ GameObject:
   - component: {fileID: 1358937455}
   m_Layer: 8
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
