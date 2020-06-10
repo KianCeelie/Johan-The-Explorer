@@ -44,6 +44,12 @@ public class playerHealth : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.tag == "health")
+        {
+            maxHealth = 125;
+            currentHealth = 125;
+            Destroy(collision.gameObject);
+        }
         // Enemies
 
         // Normal Enemy
