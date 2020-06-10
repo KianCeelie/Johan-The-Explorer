@@ -44,5 +44,27 @@ public class playerHealth : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.tag == "DamagePowerup")
+        {
+
+        }
+        // Enemies
+
+        // Normal Enemy
+        if (collision.tag == "Enemy")
+        {
+            TakeDamage(50);
+        }
+
+        // traps
+
+        // Spikes
+        if (collision.tag == "Spikes")
+        {
+            TakeDamage(100);
+        }
+
+        // Fire?
+
     }
 }

@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
 
+    public float distance;
+
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-
     }
 
     public void OnLanding()

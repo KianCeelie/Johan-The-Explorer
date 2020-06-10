@@ -9,6 +9,9 @@ TagManager:
   - jump
   - Ladder
   - ground
+  - Spikes
+  - Enemy
+  - DamagePowerup
   layers:
   - Default
   - TransparentFX
@@ -19,9 +22,9 @@ TagManager:
   - 
   - 
   - ground
-  - ladder
+  - Ladder
   - Action
-  - 
+  - enemy
   - 
   - 
   - 

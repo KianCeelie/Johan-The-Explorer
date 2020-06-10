@@ -7,16 +7,22 @@ public class Enemy : MonoBehaviour
 
     public Animator animator;
 
-    public int Health = 100;
+    public int maxHealth = 100;
+    int currentHealth;
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
     public void TakeDamage(int damage)
     {
-        Health -= damage;
+        currentHealth -= damage;
+        Debug.Log(currentHealth);
 
         //play hurt animation
         animator.SetTrigger("Hurt");
 
-        if (Health <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
