@@ -22,9 +22,6 @@ public class EnemyAttack : MonoBehaviour
 
     Rigidbody2D rb2d;
 
-    private bool isAgro = false;
-    private bool isSearching;
-
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -35,26 +32,15 @@ public class EnemyAttack : MonoBehaviour
         if (CanSeePlayer(agroRange))
         {
             //agro enemy
-            isAgro = true;
-            
+            ChasePlayer();
         }
         else
         {
-            if (isAgro)
-            {
-                if (!isSearching)
-                {
-                    isSearching = true;
-                    Invoke("StopChasingPlayer", 3);
-                }
-            }   
+            StopChasingPlayer();
         }
-        if (isAgro)
-        {
-            ChasePlayer();
-        }
-    }
 
+
+    }
 
     
     bool CanSeePlayer(float distance)
@@ -73,7 +59,6 @@ public class EnemyAttack : MonoBehaviour
 
         if(hit.collider != null)
         {
-
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 val = true;
@@ -117,9 +102,7 @@ public class EnemyAttack : MonoBehaviour
 
     void StopChasingPlayer()
     {
-        isAgro = false;
-        isSearching = false;
-        //kan ook schrijven new vector2(0,0); stopt alle movement
+        //kan ook schriven new vector2(0,0); stopt alle movement
         rb2d.velocity = Vector2.zero;
 
     }
