@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -18,13 +19,47 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField]
     float moveSpeed;
 
+    [SerializeField]
+    private LayerMask WhatIsGround;
+    
+    [SerializeField] 
+    private Transform m_GroundCheck;
+
+    private bool IsGrounded;
+
+    const float k_GroundedRadius = 0.2f;
+
     bool isFacingLeft;
 
     Rigidbody2D rb2d;
 
+    private bool isAgro = false;
+
+    private bool isSearching;
+
+    public UnityEvent OnLandEvent;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        bool wasGrounded = IsGrounded;
+        IsGrounded = false;
+
+        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, WhatIsGround);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                IsGrounded = true;
+                if (wasGrounded)
+                    OnLandEvent.Invoke();
+            }
+        }
     }
 
     void Update()
@@ -32,11 +67,26 @@ public class EnemyAttack : MonoBehaviour
         if (CanSeePlayer(agroRange))
         {
             //agro enemy
-            ChasePlayer();
+            isAgro = true;
+            
         }
         else
         {
-            StopChasingPlayer();
+            if (isAgro)
+            {
+                
+                if (!isSearching)
+                {
+                    isSearching = true;
+                    Invoke("StopChasingPlayer", 3);
+                }
+                
+            }
+            
+        }
+        if (isAgro && IsGrounded)
+        {
+            ChasePlayer();
         }
 
 
@@ -83,7 +133,7 @@ public class EnemyAttack : MonoBehaviour
 
     void ChasePlayer()
     {
-      if(transform.position.x < player.position.x)
+      if(transform.position.x < player.position.x && IsGrounded)
         {
             //enemy is to the left site of the player, so move right
             rb2d.velocity = new Vector2(moveSpeed, 0);
@@ -102,7 +152,9 @@ public class EnemyAttack : MonoBehaviour
 
     void StopChasingPlayer()
     {
-        //kan ook schriven new vector2(0,0); stopt alle movement
+        //kan ook schrijven new vector2(0,0); stopt alle movement
+        isSearching = false;
+        IsGrounded = false;
         rb2d.velocity = Vector2.zero;
 
     }
