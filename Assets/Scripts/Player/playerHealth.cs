@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class playerHealth : MonoBehaviour
 {
@@ -33,8 +36,19 @@ public class playerHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
+            switchscenes();
         }
     }
+
+    void switchscenes()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+   
+
+   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "health")
@@ -53,7 +67,7 @@ public class playerHealth : MonoBehaviour
         // Normal Enemy
         if (collision.tag == "Enemy")
         {
-            TakeDamage(50);
+            TakeDamage(25);
         }
 
         // traps
@@ -67,4 +81,6 @@ public class playerHealth : MonoBehaviour
         // Fire?
 
     }
+
+    
 }

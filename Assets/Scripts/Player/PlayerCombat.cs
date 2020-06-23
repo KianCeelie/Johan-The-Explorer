@@ -75,7 +75,7 @@ public class PlayerCombat : MonoBehaviour
                 // damage them
                 foreach (Collider2D enemy in hitEnemies)
                 {
-                    enemy.GetComponent<Enemy>().TakeDamage(60 + damage);
+                    enemy.GetComponent<EnemyHealth>().TakeDamage(60 + damage);
                 }
             }
         }
@@ -100,7 +100,7 @@ public class PlayerCombat : MonoBehaviour
                 // damage them
                 foreach (Collider2D enemy in hitEnemies)
                 {
-                    enemy.GetComponent<Enemy>().TakeDamage(40 + damage);
+                    enemy.GetComponent<EnemyHealth>().TakeDamage(40 + damage);
                 }
             }
         }
