@@ -12,6 +12,7 @@ TagManager:
   - Spikes
   - Enemy
   - DamagePowerup
+  - EnemySpear
   layers:
   - Default
   - TransparentFX

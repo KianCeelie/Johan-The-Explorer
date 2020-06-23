@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Cinemachine;
 
 public class playerHealth : MonoBehaviour
 {
@@ -11,6 +8,12 @@ public class playerHealth : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthBar;
+    public bool HitImmunity = false;
+
+    private float Cooldown = 1f;
+    private float CooldownTimer = 0f;
+
+    private bool DamageImmunity = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,26 @@ public class playerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        //test if damage works
+        if (Input.GetKeyDown(KeyCode.H) && HitImmunity == false)
         {
             TakeDamage(25);
+            DamageImmunity = true;
+        }
+
+        // If hit, play This script that makes you immune to damage for 1 second
+        if (DamageImmunity == true)
+        {
+            HitImmunity = true;
+            CooldownTimer += Time.deltaTime;
+
+            if (CooldownTimer > Cooldown)
+            {
+                HitImmunity = false;
+                DamageImmunity = false;
+
+                CooldownTimer = CooldownTimer - Cooldown;
+            }
         }
     }
 
@@ -36,19 +56,8 @@ public class playerHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
-            switchscenes();
         }
     }
-
-    void switchscenes()
-    {
-        SceneManager.LoadScene(4);
-    }
-
-   
-
-   
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "health")
@@ -65,22 +74,27 @@ public class playerHealth : MonoBehaviour
         // Enemies
 
         // Normal Enemy
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy" && HitImmunity == false)
         {
-            TakeDamage(25);
+            TakeDamage(50);
+            DamageImmunity = true;
         }
 
         // traps
 
         // Spikes
-        if (collision.tag == "Spikes")
+        if (collision.tag == "Spikes" && HitImmunity == false)
         {
             TakeDamage(100);
+            DamageImmunity = true;
         }
 
         // Fire?
-
+        if (collision.tag == "EnemySpear" && HitImmunity == false)
+        {
+            TakeDamage(25);
+            DamageImmunity = true;
+        }
     }
 
-    
 }
