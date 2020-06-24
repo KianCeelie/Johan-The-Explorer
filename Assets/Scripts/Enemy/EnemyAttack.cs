@@ -13,6 +13,7 @@ public class EnemyAttack : MonoBehaviour
     Transform player;
 
     //de range dat de enemy boos wordt
+
     [SerializeField]
     float agroRange;
 
@@ -103,7 +104,7 @@ public class EnemyAttack : MonoBehaviour
             castDist = -distance;
         }
 
-        Vector2 endPos = castPoint.position + Vector3.right * castDist;
+        Vector2 endPos = castPoint.position + Vector3.left * castDist;
 
         RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action"));
 

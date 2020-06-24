@@ -7,7 +7,18 @@ public class switchscenes : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(2);
-    }
+        if (collision.tag == "2")
+        {
+            SceneManager.LoadScene(2);
+            Debug.Log("aaa");
+        }
 
+        if(collision.tag == "3")
+        {
+            SceneManager.LoadScene("3");
+        }
+
+    }
 }
+
+  
