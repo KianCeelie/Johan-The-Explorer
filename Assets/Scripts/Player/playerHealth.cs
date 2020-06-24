@@ -85,7 +85,7 @@ public class playerHealth : MonoBehaviour
         // Spikes
         if (collision.tag == "Spikes" && HitImmunity == false)
         {
-            TakeDamage(100);
+            TakeDamage(50);
             DamageImmunity = true;
         }
 
