@@ -14,7 +14,7 @@ TagManager:
   - DamagePowerup
   - EnemySpear
   - 2
-  - 3
+  - 0
   layers:
   - Default
   - TransparentFX
