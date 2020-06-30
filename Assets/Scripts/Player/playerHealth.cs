@@ -7,13 +7,12 @@ public class playerHealth : MonoBehaviour
     public GameObject GameOver;
 
     public int maxHealth = 100;
-    public int healthbuff = 25;
     public int currentHealth;
 
     public HealthBar healthBar;
     public bool HitImmunity = false;
 
-    private float Cooldown = 1.5f;
+    private float Cooldown = 2f;
     private float CooldownTimer = 0f;
 
     private bool DamageImmunity = false;
@@ -33,17 +32,18 @@ public class playerHealth : MonoBehaviour
     {
 
         //test if damage works
-        if (Input.GetKeyDown(KeyCode.H) && HitImmunity == false)
-        {
-            TakeDamage(25);
-            DamageImmunity = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.H) && HitImmunity == false)
+        //{
+            //TakeDamage(25);
+           // DamageImmunity = true;
+        //}
 
         // If hit, play This script that makes you immune to damage for 1 second
         if (DamageImmunity == true)
         {
-            HitImmunity = true;
             CooldownTimer += Time.deltaTime;
+            HitImmunity = true;
+            
 
             if (CooldownTimer > Cooldown)
             {
@@ -97,7 +97,7 @@ public class playerHealth : MonoBehaviour
         // Spikes
         if (collision.tag == "Spikes" && HitImmunity == false)
         {
-            TakeDamage(50);
+            TakeDamage(25);
             DamageImmunity = true;
         }
 

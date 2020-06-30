@@ -61,10 +61,10 @@ public class PlayerCombat : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // attack rate
-                nextAttackTime = Time.time + 1f / attackRate;
+                nextAttackTime = Time.time + 0.5f / attackRate;
 
                 // Play an attack animation
-                animator.SetTrigger("Attack");
+                animator.SetTrigger("AttackSword");
 
                 // Play Sound
                 SoundManagerScript.PlaySound("SwordAttack");
@@ -89,7 +89,7 @@ public class PlayerCombat : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
 
                 // Play an attack animation
-                animator.SetTrigger("Attack");
+                animator.SetTrigger("AttackWhip");
 
                 // Play Sound
                 SoundManagerScript.PlaySound("WhipAttack");

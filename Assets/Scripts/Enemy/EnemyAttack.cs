@@ -40,6 +40,8 @@ public class EnemyAttack : MonoBehaviour
 
     public UnityEvent OnLandEvent;
 
+    public Animator animator;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -135,7 +137,9 @@ public class EnemyAttack : MonoBehaviour
 
     void ChasePlayer()
     {
-      if(transform.position.x < player.position.x && IsGrounded)
+        animator.SetBool("IsWalking", true);
+
+        if (transform.position.x < player.position.x && IsGrounded)
         {
             //enemy is to the left site of the player, so move right
             rb2d.velocity = new Vector2(moveSpeed, 0);
@@ -158,6 +162,8 @@ public class EnemyAttack : MonoBehaviour
         isSearching = false;
         IsGrounded = false;
         rb2d.velocity = Vector2.zero;
+
+        animator.SetBool("IsWalking", false);
 
     }
 }

@@ -24,7 +24,7 @@ public class EnemyHealth: MonoBehaviour
         animator.SetTrigger("Hurt");
 
         // knockback effect
-        GetComponent<Rigidbody2D>().AddForce(transform.right * kracht);
+        //GetComponent<Rigidbody2D>().AddForce(transform.right * kracht);
 
         if (currentHealth <= 0)
         {
@@ -46,7 +46,6 @@ public class EnemyHealth: MonoBehaviour
     void Die()
     {
         // to test if Enemy is dead
-        //Debug.Log("Enemy Died");
 
         // Die animation
         animator.SetBool("IsDead", true);
