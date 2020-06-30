@@ -10,7 +10,6 @@ public class switchscenes : MonoBehaviour
         if (collision.tag == "2")
         {
             SceneManager.LoadScene(2);
-            Debug.Log("aaa");
         }
 
         if (collision.tag == "1")
