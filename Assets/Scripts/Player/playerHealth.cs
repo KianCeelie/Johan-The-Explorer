@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerHealth : MonoBehaviour
 {
-    public GameObject GameOver;
+    public GameObject GameOverPanel;
 
     public int maxHealth = 100;
     public int currentHealth;
@@ -58,6 +58,8 @@ public class playerHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
+            GameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
