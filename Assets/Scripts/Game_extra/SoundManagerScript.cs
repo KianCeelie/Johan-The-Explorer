@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManagerScript : MonoBehaviour
 {
 
-    public static AudioClip jumpSound, swordSound, whipSound, gunSound, coinSound, switchWeaponSound;
+    public static AudioClip jumpSound, swordSound, whipSound, gunSound, coinSound, switchWeaponSound, HitSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class SoundManagerScript : MonoBehaviour
         gunSound = Resources.Load<AudioClip>("GunAttack");
         coinSound = Resources.Load<AudioClip>("CoinPickup");
         switchWeaponSound = Resources.Load<AudioClip>("WeaponSwitching");
+        HitSound = Resources.Load<AudioClip>("PlayerHitSound");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -35,6 +36,9 @@ public class SoundManagerScript : MonoBehaviour
             // player
             case "Jumping":
                 audioSrc.PlayOneShot(jumpSound);
+                break;
+            case "PlayerHitSound":
+                audioSrc.PlayOneShot(HitSound);
                 break;
 
             // Weapons

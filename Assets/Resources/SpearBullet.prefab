@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1661184938168600382}
   - component: {fileID: 2162948373659701296}
   - component: {fileID: 2162948373659701303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpearBullet
   m_TagString: EnemySpear
   m_Icon: {fileID: 0}

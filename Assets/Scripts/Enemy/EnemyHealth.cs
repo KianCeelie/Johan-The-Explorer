@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth: MonoBehaviour
 {
-
+    private float kracht = 500;
     public Animator animator;
 
     public int maxHealth = 100;
@@ -16,11 +16,15 @@ public class EnemyHealth: MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+
         currentHealth -= damage;
         Debug.Log(currentHealth);
 
         //play hurt animation
         animator.SetTrigger("Hurt");
+
+        // knockback effect
+        GetComponent<Rigidbody2D>().AddForce(transform.right * kracht);
 
         if (currentHealth <= 0)
         {

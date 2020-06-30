@@ -7,15 +7,19 @@ public class playerHealth : MonoBehaviour
     public GameObject GameOverPanel;
 
     public int maxHealth = 100;
+    public int healthbuff = 25;
     public int currentHealth;
 
     public HealthBar healthBar;
     public bool HitImmunity = false;
 
-    private float Cooldown = 1f;
+    private float Cooldown = 1.5f;
     private float CooldownTimer = 0f;
 
     private bool DamageImmunity = false;
+
+    public int Damage;
+    public playerHealth(int Damage) { }
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,7 @@ public class playerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //test if damage works
         if (Input.GetKeyDown(KeyCode.H) && HitImmunity == false)
         {
@@ -61,26 +66,31 @@ public class playerHealth : MonoBehaviour
             GameOverPanel.SetActive(true);
             Time.timeScale = 0f;
         }
+
+        // Roept TimeStop script op
+        gameObject.GetComponent<TimeStop>().StopTime(0.05f, 10, 0.01f);
+        SoundManagerScript.PlaySound("PlayerHitSound");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "health")
         {
-            maxHealth = 125;
-            currentHealth = 125;
+            currentHealth += 50;
+            healthBar.SetHealth(currentHealth);
             Destroy(collision.gameObject);
         }
 
         if (collision.tag == "DamagePowerup")
         {
-
+            Destroy(collision.gameObject);
+            Damage += 50;
         }
         // Enemies
 
         // Normal Enemy
         if (collision.tag == "Enemy" && HitImmunity == false)
         {
-            TakeDamage(50);
+            TakeDamage(25);
             DamageImmunity = true;
         }
 
@@ -89,7 +99,7 @@ public class playerHealth : MonoBehaviour
         // Spikes
         if (collision.tag == "Spikes" && HitImmunity == false)
         {
-            TakeDamage(100);
+            TakeDamage(50);
             DamageImmunity = true;
         }
 
