@@ -134,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0026312992, y: 0}
+  m_Offset: {x: 0.0026313066, y: 0.0077559203}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3252626, y: 0.32}
+  m_Size: {x: 0.3252626, y: 0.30448815}
   m_EdgeRadius: 0
 --- !u!212 &3969623735917874663
 SpriteRenderer:
@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e60ce677a0ecc4987fbbf1423cad29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kracht: 1000
   animator: {fileID: 3969623735917874662}
   maxHealth: 100
 --- !u!114 &3969623735917874656
@@ -243,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castPoint: {fileID: 3969623735241550411}
-  player: {fileID: 0}
+  player: {fileID: 6923685681513250442, guid: 0db5cebd4092f984c9107ac9ddd78a54, type: 3}
   agroRange: 5
   moveSpeed: 3
   WhatIsGround:
@@ -282,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.005816959}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -293,5 +294,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17265782, y: 0.32}
+  m_Size: {x: 0.17265782, y: 0.30836606}
   m_EdgeRadius: 0

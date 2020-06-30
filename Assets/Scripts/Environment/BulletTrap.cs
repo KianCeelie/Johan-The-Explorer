@@ -24,9 +24,6 @@ public class BulletTrap : MonoBehaviour
                 // attack rate
                 nextAttackTime = Time.time + 1f / FireRate;
 
-                // Play Sound
-                SoundManagerScript.PlaySound("GunAttack");
-
                 //Damage = BulletPrefab.GetComponent<Bullet>().Damage;
                 Instantiate(BulletPrefab, FirePointTrap.position, FirePointTrap.rotation);
             }

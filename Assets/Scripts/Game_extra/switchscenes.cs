@@ -13,9 +13,14 @@ public class switchscenes : MonoBehaviour
             Debug.Log("aaa");
         }
 
-        if(collision.tag == "3")
+        if (collision.tag == "1")
         {
-            SceneManager.LoadScene("3");
+            SceneManager.LoadScene(1);
+        }
+
+        if (collision.tag == "0")
+        {
+            SceneManager.LoadScene(0);
         }
 
     }

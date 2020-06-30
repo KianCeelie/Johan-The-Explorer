@@ -3,23 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Coins : MonoBehaviour
+public class CoinsScript : MonoBehaviour
 {
     public Text coinTxt;
-    public float coins;
+    public float coinsAantal;
+
+    public Shop shopScript;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
        if (collision.tag == "coin")
         {
             SoundManagerScript.PlaySound("CoinPickup");
-            coins += 1f;
-            coinTxt.text = coins.ToString();
+            coinsAantal += 1f;
+            coinTxt.text = coinsAantal.ToString();
             Destroy(collision.gameObject);
         }
     }
     void Start()
     {
-        coinTxt.text = coins.ToString();
+        coinTxt.text = coinsAantal.ToString();
+    }
+
+    void Update()
+    {
+        
     }
 }
