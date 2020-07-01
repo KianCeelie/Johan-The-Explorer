@@ -17,9 +17,9 @@ public class switchscenes : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        if (collision.tag == "0")
+        if (collision.tag == "4")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(4);
         }
 
     }
