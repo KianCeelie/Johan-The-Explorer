@@ -8,8 +8,6 @@ public class CoinsScript : MonoBehaviour
     public Text coinTxt;
     public float coinsAantal;
 
-    public Shop shopScript;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
        if (collision.tag == "coin")
