@@ -59,18 +59,20 @@ public class playerHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
+        gameObject.GetComponent<TimeStop>().StopTime(0.05f, 10, 0.01f);
+        SoundManagerScript.PlaySound("PlayerHitSound");
+
         healthBar.SetHealth(currentHealth);
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
             GameOverPanel.SetActive(true);
             Time.timeScale = 0f;
+            gameObject.GetComponent<TimeStop>().StopTime(1f, 10, 1f);
         }
-
-        // Roept TimeStop script op
-        gameObject.GetComponent<TimeStop>().StopTime(0.05f, 10, 0.01f);
-        SoundManagerScript.PlaySound("PlayerHitSound");
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "health")
