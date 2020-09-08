@@ -32,13 +32,13 @@ public class playerHealth : MonoBehaviour
     {
 
         //test if damage works
-        //if (Input.GetKeyDown(KeyCode.H) && HitImmunity == false)
-        //{
-            //TakeDamage(25);
-           // DamageImmunity = true;
-        //}
+        if (Input.GetKeyDown(KeyCode.H) && HitImmunity == false)
+        {
+            TakeDamage(25);
+            DamageImmunity = true;
+        }
 
-        // If hit, play This script that makes you immune to damage for 1 second
+         //If hit, play This script that makes you immune to damage for 1 second
         if (DamageImmunity == true)
         {
             CooldownTimer += Time.deltaTime;
@@ -109,6 +109,18 @@ public class playerHealth : MonoBehaviour
             TakeDamage(25);
             DamageImmunity = true;
         }
+    }
+    public void SavePlayer()
+    {
+        SaveSysteem.savePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSysteem.loadPlayer();
+
+        currentHealth = data.health;
+
     }
 
 }

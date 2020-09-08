@@ -8,6 +8,7 @@ public class MenuControl : MonoBehaviour
 
     public GameObject OptionsPanel;
     public GameObject Neusaap;
+    public GameObject ControlPanel;
 
     public void LoadScene(string level)
     {
@@ -33,6 +34,16 @@ public class MenuControl : MonoBehaviour
     public void CloseOptionsPanel()
     {
         OptionsPanel.gameObject.SetActive(false);
+    }
+
+    public void LoadControlPanel()
+    {
+        ControlPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseControlPanel()
+    {
+        ControlPanel.gameObject.SetActive(false);
     }
 
     public void LoadNeusaap()
