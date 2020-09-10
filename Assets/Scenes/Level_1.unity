@@ -7085,7 +7085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.08, y: -7.38, z: -10}
+  m_LocalPosition: {x: -23.45, y: -7.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7611,6 +7611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OptionsPanel: {fileID: 0}
   Neusaap: {fileID: 0}
+  ControlPanel: {fileID: 0}
 --- !u!4 &760028973
 Transform:
   m_ObjectHideFlags: 0
@@ -8560,12 +8561,12 @@ PrefabInstance:
     - target: {fileID: 4655216846306914166, guid: 8facbe3f034d6154ea27182e1844ba10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.08
+      value: -23.45
       objectReference: {fileID: 0}
     - target: {fileID: 4655216846306914166, guid: 8facbe3f034d6154ea27182e1844ba10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.88
+      value: -7.94
       objectReference: {fileID: 0}
     - target: {fileID: 4655216846306914166, guid: 8facbe3f034d6154ea27182e1844ba10,
         type: 3}
@@ -10332,7 +10333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397832084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.08, y: -7.38, z: -10}
+  m_LocalPosition: {x: -23.45, y: -7.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 386035563}
