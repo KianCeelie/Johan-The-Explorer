@@ -9,15 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Startscherm.unity
     guid: ecf654fa5afa38d438718a46818b5681
   - enabled: 1
-    path: Assets/Scenes/Level_1.unity
+    path: Assets/Scenes/Level_1JungelDag.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Level_2.unity
+    path: Assets/Scenes/Level_2Mijn.unity
     guid: 65888710a58619840ada09895c05e83d
   - enabled: 1
-    path: Assets/Scenes/Level_3.unity
+    path: Assets/Scenes/Level_3JungelNacht.unity
     guid: 65f88e45a0323434a92c8be7e37bd009
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/Test shop.unity
+    guid: 63df41b2e915ab44196d17dbe78cc1cd
+  - enabled: 1
+    path: Assets/Scenes/Eindscherm.unity
     guid: 810a786d8ab875545afc80b2dde6899b
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 945d13291f4f89d47950459a4fa94589
   m_configObjects: {}

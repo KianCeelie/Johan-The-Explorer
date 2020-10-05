@@ -6,6 +6,7 @@ public class Ladder : MonoBehaviour
 
 {
     private float speed = 5;
+    public Animator animator;
 
 
     private void OnTriggerStay2D(Collider2D other)

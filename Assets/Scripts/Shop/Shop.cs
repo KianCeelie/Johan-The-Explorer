@@ -13,7 +13,21 @@ public class Shop : MonoBehaviour
 
     public Text shopTxt;
 
-    public CoinsScript coins; 
+    public CoinsScript coins;
+
+    private SpriteRenderer rend;
+    private Sprite enemySprite, playerSprite; //kan je meer sprites aan toevoegen voor de rest van de options
+
+    private void Start()
+    {
+        rend = GetComponent<SpriteRenderer>();
+        enemySprite = Resources.Load<Sprite>("barman");
+        playerSprite = Resources.Load<Sprite>("barmanNee");
+        rend.sprite = enemySprite; // laat de eerste sprite
+
+
+
+    }
 
     public void Health()
     {
@@ -65,18 +79,21 @@ public class Shop : MonoBehaviour
 
     public void Buy()
     {
-        if (i< inStock && coins.coinsAantal >= itemCost)
+        if (i < inStock && coins.coinsAantal >= itemCost)
         {
             Debug.Log("Bedankt voor het kopen van " + itemName + ".");
             shopTxt.text = "Bedankt voor het kopen van " + itemName + ".";
             coins.coinsAantal -= itemCost;
             coins.coinTxt.text = coins.coinsAantal.ToString();
+            inStock -=1;
             i += 1;
         }
+    
         else if (i < inStock && coins.coinsAantal < itemCost)
         {
             Debug.Log("Je hebt te weinig geld voor " + itemName + "!");
             shopTxt.text = "Je hebt te weinig geld voor " + itemName + "!";
+            rend.sprite = playerSprite; // laat de andere sprite
         }
         else if (i >= inStock && coins.coinsAantal >= itemCost)
         {
@@ -89,4 +106,6 @@ public class Shop : MonoBehaviour
             shopTxt.text = itemName + " is uitverkocht.";
         }
     }
+
+
 }

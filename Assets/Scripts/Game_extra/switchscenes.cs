@@ -17,6 +17,11 @@ public class switchscenes : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
+        if (collision.tag == "3")
+        {
+            SceneManager.LoadScene(3);
+        }
+
         if (collision.tag == "4")
         {
             SceneManager.LoadScene(4);
